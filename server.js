@@ -50,7 +50,7 @@ const onListening = () => {
 
 if(process.env.MODE === 'production'){
   //set a static folder
-  app.use(express.static('dist/'))
+  app.use(express.static('dist'))
   // app.get('*', (req, res) => {
   //     res.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
   // })
