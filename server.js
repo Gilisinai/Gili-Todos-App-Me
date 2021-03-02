@@ -1,11 +1,11 @@
+const dotenv = require('dotenv');
+dotenv.config();
 const app = require("./backend/app");
 const debug = require("debug")("node-angular");
 const http = require("http");
-const dotenv = require('dotenv');
 const path = require('path')
 const express = require('express')
 
-dotenv.config();
 
 const normalizePort = val => {
   var port = parseInt(val, 10);
@@ -59,7 +59,4 @@ if(process.env.MODE === 'production'){
 const port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);
 
-const server = http.createServer(app);
-server.on("error", onError);
-server.on("listening", onListening);
-server.listen(port);
+app.listen('3000', ()=>console.log('server started!'));
