@@ -59,4 +59,4 @@ if(process.env.MODE === 'production'){
 const port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);
 
-app.listen('3000', ()=>console.log('server started!'));
+app.listen(port, ()=>console.log('server started!'));
