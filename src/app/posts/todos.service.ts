@@ -7,7 +7,13 @@ import { Todo } from './todo.model'
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment'
 
-const BACKEND_URL = `${environment.apiUrl}/todos/`
+let BACKEND_URL: string;
+
+if (process.env.MODE === 'production') {
+    BACKEND_URL = `/users`;
+} else {
+    BACKEND_URL = `${environment.apiUrl}/users/`;
+}
 
 @Injectable({ providedIn: 'root' })
 export class TodoService {

@@ -4,9 +4,14 @@ import { Router } from "@angular/router";
 import { Subject } from "rxjs";
 import { AuthData } from "./auth-data.model";
 
-import { environment } from '../../environments/environment'
+import { environment } from '../../environments/environment';
+let BACKEND_URL: string;
 
-const BACKEND_URL = `${environment.apiUrl}/users/`
+if (process.env.MODE === 'production') {
+    BACKEND_URL = `/users`;
+} else {
+    BACKEND_URL = `${environment.apiUrl}/users/`;
+}
 
 @Injectable({ providedIn: "root" })
 export class AuthService {
