@@ -1,0 +1,28 @@
+<mat-card>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <form [formGroup]="form"  (submit)="onSaveTodo()"  *ngIf="!isLoading">
+        <mat-form-field>
+            <input 
+            matInput 
+            type="text"  
+            formControlName="title"          
+            placeholder="Todo Title"
+            >
+            <mat-error *ngIf="form.get('title').invalid">Please enter a valid title</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <textarea 
+            matInput 
+            formControlName="content"
+            rows="4" 
+            placeholder="Todo Content"
+            ></textarea>
+            <mat-error *ngIf="form.get('content').invalid">Please enter a valid content</mat-error>
+        </mat-form-field>
+        <button 
+        mat-raised-button 
+        color="accent"
+        type="submit"
+        >Save Todo</button>
+    </form>
+</mat-card>

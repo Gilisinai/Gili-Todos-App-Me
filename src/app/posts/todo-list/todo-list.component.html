@@ -1,0 +1,19 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<mat-accordion  *ngIf="todos.length > 0 && !isLoading">
+    <mat-expansion-panel *ngFor="let todo of todos">
+        <mat-expansion-panel-header>
+            <mat-panel-title [ngClass]="{ 'done-mark': todo.isCompleted}">
+                {{ todo.title }}
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>{{ todo.content }} </p>
+        <mat-action-row *ngIf="userIsAuthenticated && userId == todo.creator">
+            <button mat-button color="accent" *ngIf="!todo.isCompleted" (click)="onToggleCheck(todo)" value="mark as done">MARK AS DONE</button>
+            <button mat-button color="accent"  *ngIf="todo.isCompleted" (click)="onToggleCheck(todo)" value="mark as done">MARK AS NOT DONE</button>
+            <a mat-button color="primary" [routerLink]="['/edit', todo.id]">EDIT</a>
+            <button mat-button color="warn" (click)="onDelete(todo.id)">DELETE</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+</mat-accordion>
+<mat-paginator [length]="totalPosts" [pageSize]="todosPerPage" [pageSizeOptions]='pageSizeOptions' (page)="onChangedPage($event)"  *ngIf="todos.length > 0"></mat-paginator>
+<p class="info-text" *ngIf="todos.length <= 0 && !isLoading"> No Posts added yet! </p>
