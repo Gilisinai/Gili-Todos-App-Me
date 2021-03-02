@@ -7,11 +7,7 @@ import { AuthData } from "./auth-data.model";
 import { environment } from '../../environments/environment';
 let BACKEND_URL: string;
 
-if (process.env.MODE === 'production') {
-    BACKEND_URL = `/users`;
-} else {
-    BACKEND_URL = `${environment.apiUrl}/users/`;
-}
+BACKEND_URL = `/users`;
 
 @Injectable({ providedIn: "root" })
 export class AuthService {
