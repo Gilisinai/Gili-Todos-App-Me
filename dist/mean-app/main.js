@@ -658,7 +658,7 @@ function TodoListCopmonent_mat_paginator_2_Template(rf, ctx) { if (rf & 1) {
 } }
 function TodoListCopmonent_p_3_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " No Posts added yet! ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " No Todos added yet! ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 class TodoListCopmonent {
