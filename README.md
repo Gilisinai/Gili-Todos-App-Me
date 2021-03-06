@@ -1,4 +1,4 @@
-Link: https://gili-todo.herokuapp.com/
+Link: https://gilis-todos.herokuapp.com/
 
 local setup: 
 - clone the repo
